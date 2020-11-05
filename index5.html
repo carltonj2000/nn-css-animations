@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style5.css" />
+    <title>CSS Animation</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Pick a Card</h1>
+      <ul class="panels">
+        <li>
+          <div class="front" style="background: #4c8fea">Hello</div>
+          <div class="back" style="background: #267df4">World</div>
+        </li>
+        <li>
+          <div class="front" style="background: #4c8fea">Get To</div>
+          <div class="back" style="background: #267df4">The Chopper</div>
+        </li>
+        <li>
+          <div class="front" style="background: #21bf3b">Foo</div>
+          <div class="back" style="background: #4dd763">Bar</div>
+        </li>
+        <li>
+          <div class="front" style="background: #21bf3b">Tempus</div>
+          <div class="back" style="background: #4dd763">Fugit</div>
+        </li>
+        <li>
+          <div class="front" style="background: #c3333d">HTML</div>
+          <div class="back" style="background: #e74853">ROCKS</div>
+        </li>
+        <li>
+          <div class="front" style="background: #c3333d">A</div>
+          <div class="back" style="background: #e74853">B</div>
+        </li>
+        <li>
+          <div class="front" style="background: #267df4">Super</div>
+          <div class="back" style="background: #4c8fea">Mario</div>
+        </li>
+        <li>
+          <div class="front" style="background: #267df4">J</div>
+          <div class="back" style="background: #4c8fea">Query</div>
+        </li>
+      </ul>
+    </div>
+    <script>
+      // finally did it with just css so the following was not needed
+      const fbs = document.querySelectorAll(".front, .back");
+      fbs.forEach((fb) => {
+        fb.addEventListener("click", () => {
+          /*
+          fb.classList.add("hide");
+          fb.classList.remove("show");
+          const sibling = fb.nextElementSibling || fb.previousElementSibling;
+          if (sibling) {
+            sibling.classList.add("show");
+            sibling.classList.remove("hide");
+          }
+          */
+          console.log(fb, sibling);
+        });
+      });
+    </script>
+  </body>
+</html>

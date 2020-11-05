@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  display: grid;
+  list-style: none;
+  grid-template-columns: auto auto auto auto;
+}
+
+li {
+  position: relative;
+}
+
+div.front,
+div.back {
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+
+div.front {
+  position: absolute;
+}
+
+div.back {
+  transform: rotateY(90deg);
+}
+
+li:hover div.front {
+  animation: hide 0.2s ease-in forwards;
+}
+
+li:hover div.back {
+  animation: hide 0.2s 0.2s ease-out forwards reverse;
+}
+
+@keyframes hide {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(90deg);
+  }
+}

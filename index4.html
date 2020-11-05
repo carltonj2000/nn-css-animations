@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style4.css" />
+    <title>CSS Animation</title>
+  </head>
+  <body class="pop-up">
+    <header>
+      <h1>Sports Clothing</h1>
+      <div class="basked-icon"><img src="basket.png" /></div>
+    </header>
+    <ul class="products">
+      <li>
+        <img src="t-1.jpg" alt="Green T-Shirt" />
+        <h2>Green T-Shirt</h2>
+        <button>Add to basket</button>
+      </li>
+      <li>
+        <img src="t-2.jpg" alt="Yellow T-Shirt" />
+        <h2>Yellow T-Shirt</h2>
+        <button>Add to basket</button>
+      </li>
+      <li>
+        <img src="t-3.jpg" alt="Pink T-Shirt" />
+        <h2>Pink T-Shirt</h2>
+        <button>Add to basket</button>
+      </li>
+      <li>
+        <img src="t-1.jpg" alt="Green T-Shirt" />
+        <h2>Green T-Shirt</h2>
+        <button>Add to basket</button>
+      </li>
+      <li>
+        <img src="t-2.jpg" alt="Yellow T-Shirt" />
+        <h2>Yellow T-Shirt</h2>
+        <button>Add to basket</button>
+      </li>
+      <li>
+        <img src="t-3.jpg" alt="Pink T-Shirt" />
+        <h2>Pink T-Shirt</h2>
+        <button>Add to basket</button>
+      </li>
+    </ul>
+    <script>
+      const body = document.querySelector("body");
+      const button = document.querySelectorAll("button");
+      button.forEach((b) => {
+        b.addEventListener("click", () => {
+          const img = b.parentNode.querySelector("img");
+          const position = img.getBoundingClientRect();
+          const { top, left } = position;
+          const cloned = img.cloneNode();
+          cloned.classList.add("zoom");
+          cloned.setAttribute("style", `top: ${top}px; left: ${left}px;`);
+          body.appendChild(cloned);
+          setTimeout(() => body.removeChild(cloned), 1000);
+        });
+      });
+    </script>
+  </body>
+</html>

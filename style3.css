@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.pop-up {
+  position: relative;
+  background-color: lightslategray;
+}
+
+#pop-up {
+  position: relative;
+  top: 200px;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container {
+  background-color: salmon;
+  padding: 30px;
+  position: absolute;
+  text-align: center;
+}
+
+.cross {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #555;
+  color: #ddd;
+  font-weight: bold;
+  width: 30px;
+  height: 25px;
+  border-radius: 15px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+img {
+  position: absolute;
+  top: -50px;
+  left: 120px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 10px 0 0 10px;
+  font-size: 18px;
+}
+
+button {
+  padding: 10px;
+  margin-left: -5px;
+  border-radius: 0 10px 10px 0;
+  border: 1px solid #333;
+  font-size: 18px;
+  background-color: #555;
+  color: #ddd;
+}
+
+#pop-up {
+  top: -400px;
+  transform-origin: 10px 10px;
+  animation: drop 0.5s ease forwards, swing 1s 2s ease forwards;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(700px);
+  }
+  100% {
+    transform: translateY(650px);
+    opacity: 1;
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: translateY(650px) rotateZ(0deg);
+  }
+  40% {
+    transform: translateY(650px) rotateZ(90deg);
+  }
+  70% {
+    transform: translateY(650px) rotateZ(70deg);
+  }
+  100% {
+    transform: translateY(650px) rotateZ(75deg);
+  }
+}
