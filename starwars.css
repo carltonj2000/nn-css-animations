@@ -1,0 +1,57 @@
+body {
+  background: rgb(20, 20, 20);
+  overflow: hidden;
+  color: white;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 1) 40%,
+    rgba(20, 20, 20, 0) 100%
+  );
+}
+.container {
+  display: flex;
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  perspective: 400px;
+}
+
+.scrollText {
+  font-size: 3vw;
+  line-height: 1.5em;
+  text-align: justify;
+  position: relative;
+  animation: scroll 10s linear forwards;
+}
+
+h1 {
+  text-align: center;
+}
+
+@keyframes scroll {
+  0% {
+    top: 50vh;
+    transform: translateZ(0px) rotateX(0deg);
+  }
+  75% {
+    top: -100vh;
+    transform: translateZ(-250px) rotateX(7deg);
+  }
+  100% {
+    top: -150vh;
+    transform: translateZ(-500px) rotateX(10deg);
+  }
+  100% {
+    top: -250vh;
+    transform: translateZ(-750px) rotateX(15deg);
+  }
+}
